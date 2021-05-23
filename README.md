@@ -1,6 +1,8 @@
 # DIY Dual TDA7293 Audio Power Amplifier
 
-This project contains a DIY dual audio power amplifier to drive two 8 Ohm loudspeakers with unbalanced line input signals. The audio amplifier consists of a pre-assembled PCB based on a TDA7293 IC with minimal external components and is implemented in a various number of bass/guitar amps.
+This project contains a DIY dual audio power amplifier to drive two 8 Ohm loudspeakers from unbalanced line input signals. The audio amplifier consists of a pre-assembled PCB based on a TDA7293 IC with minimal external components and is implemented in a various number of bass/guitar amps.
+
+![Block diagram](images/GuitarSetup.jpg)
 
 ## Block diagram
 
@@ -51,7 +53,7 @@ Note: Output power up to 10 Watt RMS per loudspeaker is more than sufficient for
 
 ## Main input power
 
-The 230V main power input connector `J1` and main switch `SW1A` are already present. However, there is no netfilter in my version and is not required. It is recommended to add a main fuse `F1`, but was not available in my PSU. The power switch is in series with the transformer to completely remove the power from the transformer.
+The 230V main power input connector `J1` and main switch `SW1A` are already present. However, there is no netfilter in my version and is not required. It is recommended to add a main fuse `F1`, but was not available in my PSU. The power switch is in series with the transformer to completely remove the power to the transformer.
 
 ![Main input and switch](images/MainInput.jpg)
 
