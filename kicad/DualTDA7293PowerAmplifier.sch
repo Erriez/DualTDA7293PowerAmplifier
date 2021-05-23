@@ -1,0 +1,754 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Dual TDA7293 power amplifier"
+Date "2021-05-23"
+Rev "1.0"
+Comp ""
+Comment1 "By Erriez"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:R R1
+U 1 1 60AA3076
+P 4050 5950
+F 0 "R1" V 3843 5950 50  0000 C CNN
+F 1 "10E 5W" V 3934 5950 50  0000 C CNN
+F 2 "" V 3980 5950 50  0001 C CNN
+F 3 "~" H 4050 5950 50  0001 C CNN
+	1    4050 5950
+	0    1    1    0   
+$EndComp
+$Comp
+L Diode:1N4007 D1
+U 1 1 60AA3451
+P 4050 5350
+F 0 "D1" H 4050 5566 50  0000 C CNN
+F 1 "1N4007" H 4050 5475 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 4050 5175 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 4050 5350 50  0001 C CNN
+	1    4050 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4007 D2
+U 1 1 60AA4265
+P 4050 5650
+F 0 "D2" H 4050 5434 50  0000 C CNN
+F 1 "1N4007" H 4050 5525 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 4050 5475 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 4050 5650 50  0001 C CNN
+	1    4050 5650
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 60AA55CB
+P 4050 6300
+F 0 "C1" V 3798 6300 50  0000 C CNN
+F 1 "100nF" V 3889 6300 50  0000 C CNN
+F 2 "" H 4088 6150 50  0001 C CNN
+F 3 "~" H 4050 6300 50  0001 C CNN
+	1    4050 6300
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 60AA5E95
+P 4800 5350
+F 0 "#PWR02" H 4800 5100 50  0001 C CNN
+F 1 "GND" H 4805 5177 50  0000 C CNN
+F 2 "" H 4800 5350 50  0001 C CNN
+F 3 "" H 4800 5350 50  0001 C CNN
+	1    4800 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Transformer_1P_SS T1
+U 1 1 60AA67FD
+P 4050 4100
+F 0 "T1" H 4050 4400 50  0000 C CNN
+F 1 "2x15VAC 30VA" H 4050 3850 50  0000 C CNN
+F 2 "" H 4050 4100 50  0001 C CNN
+F 3 "~" H 4050 4100 50  0001 C CNN
+	1    4050 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_DPST_x2 SW1
+U 1 1 60AA8762
+P 3300 3900
+F 0 "SW1" H 3300 4135 50  0000 C CNN
+F 1 "Power on/off" H 3300 4044 50  0000 C CNN
+F 2 "" H 3300 3900 50  0001 C CNN
+F 3 "~" H 3300 3900 50  0001 C CNN
+	1    3300 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J12
+U 1 1 60AAB651
+P 8800 4600
+F 0 "J12" H 8750 4850 50  0000 L CNN
+F 1 "Screw_Terminal_01x03" H 8880 4551 50  0001 L CNN
+F 2 "" H 8800 4600 50  0001 C CNN
+F 3 "~" H 8800 4600 50  0001 C CNN
+	1    8800 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 4300 2950 4200
+Wire Wire Line
+	2950 4000 2950 3900
+Wire Wire Line
+	2950 3900 3100 3900
+Wire Wire Line
+	3650 4300 3450 4300
+Wire Wire Line
+	3650 3900 3500 3900
+Wire Wire Line
+	3900 6300 3750 6300
+Wire Wire Line
+	3750 6300 3750 5950
+Wire Wire Line
+	3750 5350 3900 5350
+Wire Wire Line
+	3900 5650 3750 5650
+Connection ~ 3750 5650
+Wire Wire Line
+	3750 5650 3750 5350
+Wire Wire Line
+	3900 5950 3750 5950
+Connection ~ 3750 5950
+Wire Wire Line
+	3750 5950 3750 5650
+Wire Wire Line
+	4200 6300 4350 6300
+Wire Wire Line
+	4350 6300 4350 5950
+Wire Wire Line
+	4350 5350 4200 5350
+Wire Wire Line
+	4200 5650 4350 5650
+Connection ~ 4350 5650
+Wire Wire Line
+	4200 5950 4350 5950
+Connection ~ 4350 5950
+Wire Wire Line
+	4350 5950 4350 5650
+Connection ~ 3750 5350
+Wire Wire Line
+	3550 5350 3750 5350
+Wire Wire Line
+	4600 5350 4800 5350
+$Comp
+L Device:D_Bridge_+-AA D3
+U 1 1 60AAF721
+P 6700 4100
+F 0 "D3" H 6650 4100 50  0000 L CNN
+F 1 "D_Bridge_+-AA" H 7044 4055 50  0001 L CNN
+F 2 "" H 6700 4100 50  0001 C CNN
+F 3 "~" H 6700 4100 50  0001 C CNN
+	1    6700 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x03_Female J2
+U 1 1 60AB25A7
+P 2750 4100
+F 0 "J2" H 2750 4300 50  0000 C CNN
+F 1 "Main in 230V 50Hz" H 2950 4100 50  0001 C CNN
+F 2 "" H 2750 4100 50  0001 C CNN
+F 3 "~" H 2750 4100 50  0001 C CNN
+	1    2750 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3550 4100 2950 4100
+Text Label 3000 4300 0    50   ~ 0
+N
+Connection ~ 4600 5350
+$Comp
+L Connector:Conn_01x03_Female J7
+U 1 1 60AB169C
+P 5250 4100
+F 0 "J7" H 5150 3900 50  0000 L CNN
+F 1 "Conn_01x03_Female" H 5278 4035 50  0001 L CNN
+F 2 "" H 5250 4100 50  0001 C CNN
+F 3 "~" H 5250 4100 50  0001 C CNN
+	1    5250 4100
+	1    0    0    -1  
+$EndComp
+Text Label 4700 3900 0    50   ~ 0
+15VAC_1
+Text Label 3000 4100 0    50   ~ 0
+NE
+Text Label 3000 3900 0    50   ~ 0
+P
+Text Label 4700 4100 0    50   ~ 0
+0V
+Text Label 4700 4300 0    50   ~ 0
+15VAC_2
+Wire Wire Line
+	5050 3900 5050 4000
+Wire Wire Line
+	5050 4300 5050 4200
+$Comp
+L Connector:Conn_01x03_Female J8
+U 1 1 60ABFC37
+P 5650 4100
+F 0 "J8" H 5600 4300 50  0000 C CNN
+F 1 "Conn_01x03_Female" H 5542 3866 50  0001 C CNN
+F 2 "" H 5650 4100 50  0001 C CNN
+F 3 "~" H 5650 4100 50  0001 C CNN
+	1    5650 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5850 4200 5850 4400
+Wire Wire Line
+	5850 4400 6700 4400
+Wire Wire Line
+	5850 4000 5850 3800
+Wire Wire Line
+	5850 3800 6700 3800
+Wire Wire Line
+	5850 4100 6250 4100
+Wire Wire Line
+	6250 4100 6250 4600
+Wire Wire Line
+	6400 4100 6400 5100
+$Comp
+L Device:CP C2
+U 1 1 60AC548A
+P 7500 4350
+F 0 "C2" H 7550 4250 50  0000 L CNN
+F 1 "2200uF 50V" H 6900 4350 50  0000 L CNN
+F 2 "" H 7538 4200 50  0001 C CNN
+F 3 "~" H 7500 4350 50  0001 C CNN
+	1    7500 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C3
+U 1 1 60AC5DA4
+P 7500 4850
+F 0 "C3" H 7550 4750 50  0000 L CNN
+F 1 "2200uF 50V" H 6900 4850 50  0000 L CNN
+F 2 "" H 7538 4700 50  0001 C CNN
+F 3 "~" H 7500 4850 50  0001 C CNN
+	1    7500 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 60AC603C
+P 7900 4100
+F 0 "R2" V 7693 4100 50  0000 C CNN
+F 1 "0.5E" V 7784 4100 50  0000 C CNN
+F 2 "" V 7830 4100 50  0001 C CNN
+F 3 "~" H 7900 4100 50  0001 C CNN
+	1    7900 4100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 60AC67B1
+P 7900 5100
+F 0 "R3" V 7693 5100 50  0000 C CNN
+F 1 "0.5E" V 7784 5100 50  0000 C CNN
+F 2 "" V 7830 5100 50  0001 C CNN
+F 3 "~" H 7900 5100 50  0001 C CNN
+	1    7900 5100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7500 4200 7500 4100
+Wire Wire Line
+	7500 5000 7500 5100
+Text Label 8250 4100 0    50   ~ 0
++20VDC
+Text Label 8300 4600 0    50   ~ 0
+GND
+Text Label 8250 5100 0    50   ~ 0
+-20VDC
+Wire Wire Line
+	4450 3900 5050 3900
+Wire Wire Line
+	4450 4300 5050 4300
+Wire Wire Line
+	4350 5350 4600 5350
+Connection ~ 4350 5350
+Wire Wire Line
+	4350 5350 4350 5650
+Wire Wire Line
+	6250 4600 7500 4600
+Wire Wire Line
+	8600 4500 8600 4100
+Wire Wire Line
+	8600 4700 8600 5100
+Wire Wire Line
+	8050 5100 8600 5100
+$Comp
+L power:GND #PWR03
+U 1 1 60AD5403
+P 6250 4600
+F 0 "#PWR03" H 6250 4350 50  0001 C CNN
+F 1 "GND" H 6255 4427 50  0000 C CNN
+F 2 "" H 6250 4600 50  0001 C CNN
+F 3 "" H 6250 4600 50  0001 C CNN
+	1    6250 4600
+	1    0    0    -1  
+$EndComp
+Connection ~ 6250 4600
+Wire Wire Line
+	4450 4100 4600 4100
+Wire Wire Line
+	3550 4100 3550 4600
+Wire Wire Line
+	4600 4100 4600 5350
+Connection ~ 4600 4100
+Wire Wire Line
+	4600 4100 5050 4100
+Wire Notes Line
+	2250 3550 2250 4750
+Wire Notes Line
+	2250 4750 5350 4750
+Wire Notes Line
+	5350 4750 5350 3550
+Wire Notes Line
+	5350 3550 2250 3550
+Text Notes 2300 4700 0    50   ~ 0
+Main input
+Wire Notes Line
+	5350 5000 3200 5000
+Wire Notes Line
+	3200 5000 3200 6500
+Wire Notes Line
+	3200 6500 5350 6500
+Wire Notes Line
+	5350 6500 5350 5000
+Text Notes 4550 6450 0    50   ~ 0
+Shield - grounding
+Wire Notes Line
+	5550 3550 5550 5300
+Wire Notes Line
+	5550 5300 9150 5300
+Wire Notes Line
+	9150 5300 9150 3550
+Wire Notes Line
+	9150 3550 5550 3550
+Text Notes 5600 5250 0    50   ~ 0
+Rectifier
+Connection ~ 7500 4100
+Wire Wire Line
+	7500 4100 7750 4100
+Wire Wire Line
+	7000 4100 7500 4100
+Connection ~ 7500 5100
+Wire Wire Line
+	7500 5100 7750 5100
+Wire Wire Line
+	6400 5100 7500 5100
+$Comp
+L Connector:Screw_Terminal_01x03 J4
+U 1 1 60AF75B9
+P 3850 2550
+F 0 "J4" V 3850 2250 50  0000 L CNN
+F 1 "Power in" V 3850 2750 50  0000 L CNN
+F 2 "" H 3850 2550 50  0001 C CNN
+F 3 "~" H 3850 2550 50  0001 C CNN
+	1    3850 2550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J5
+U 1 1 60AF8A2B
+P 4450 2050
+F 0 "J5" H 4400 2150 50  0000 L CNN
+F 1 "Speaker" H 4300 1850 50  0000 L CNN
+F 2 "" H 4450 2050 50  0001 C CNN
+F 3 "~" H 4450 2050 50  0001 C CNN
+	1    4450 2050
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J3
+U 1 1 60AF9980
+P 3250 1950
+F 0 "J3" H 3250 1750 50  0000 C CNN
+F 1 "Audio in" H 3200 2050 50  0000 C CNN
+F 2 "" H 3250 1950 50  0001 C CNN
+F 3 "~" H 3250 1950 50  0001 C CNN
+	1    3250 1950
+	1    0    0    -1  
+$EndComp
+Text Notes 8850 4550 0    50   ~ 0
++20V
+Text Notes 8900 4650 0    50   ~ 0
+GND
+Text Notes 8850 4750 0    50   ~ 0
+-20V
+Text Notes 3400 1950 2    50   ~ 0
++
+Text Notes 3400 2100 2    50   ~ 0
+-
+Text Notes 4400 1950 2    50   ~ 0
++
+Text Notes 4400 2100 2    50   ~ 0
+-
+Text Notes 3950 2500 2    50   ~ 0
+GND
+Text Notes 3750 2500 2    50   ~ 0
++
+Text Notes 4050 2500 2    50   ~ 0
+-
+Wire Notes Line
+	4750 1650 4750 2800
+Wire Notes Line
+	2950 2800 4750 2800
+Wire Notes Line
+	2950 2800 2950 1650
+Text Notes 3050 2750 0    50   ~ 0
+TDA7293
+$Comp
+L Connector:Conn_01x02_Female J1
+U 1 1 60B077D8
+P 1800 1850
+F 0 "J1" H 1900 1800 50  0000 C CNN
+F 1 "6.3mm TS Jack" H 1950 1950 50  0000 C CNN
+F 2 "" H 1800 1850 50  0001 C CNN
+F 3 "~" H 1800 1850 50  0001 C CNN
+	1    1800 1850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2000 1750 2500 1750
+$Comp
+L Device:R_POT RV1
+U 1 1 60B05E28
+P 2500 1950
+F 0 "RV1" H 2431 1996 50  0000 R CNN
+F 1 "47k LOG" H 2431 1905 50  0000 R CNN
+F 2 "" H 2500 1950 50  0001 C CNN
+F 3 "~" H 2500 1950 50  0001 C CNN
+	1    2500 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 2150 2500 2100
+Connection ~ 2500 2150
+Wire Wire Line
+	2000 1850 2000 2150
+Wire Wire Line
+	2500 1750 2500 1800
+Wire Wire Line
+	2650 1950 3050 1950
+Wire Wire Line
+	3050 2050 2750 2050
+Wire Wire Line
+	2750 2050 2750 2150
+Wire Wire Line
+	2000 2150 2500 2150
+Wire Wire Line
+	2750 2150 2500 2150
+$Comp
+L Connector:Conn_01x02_Female J6
+U 1 1 60B24596
+P 5100 1950
+F 0 "J6" H 5200 1900 50  0000 C CNN
+F 1 "2x 4mm Banana" H 5200 1750 50  0000 C CNN
+F 2 "" H 5100 1950 50  0001 C CNN
+F 3 "~" H 5100 1950 50  0001 C CNN
+	1    5100 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 2750 3950 2950
+Wire Wire Line
+	3850 2750 3850 2950
+$Comp
+L power:GND #PWR01
+U 1 1 60B3DBAB
+P 3850 2950
+F 0 "#PWR01" H 3850 2700 50  0001 C CNN
+F 1 "GND" H 3855 2777 50  0000 C CNN
+F 2 "" H 3850 2950 50  0001 C CNN
+F 3 "" H 3850 2950 50  0001 C CNN
+	1    3850 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 2750 3750 2950
+Wire Wire Line
+	3750 2950 3400 2950
+Text Label 3400 2950 0    50   ~ 0
++20VDC
+Wire Wire Line
+	3950 2950 4300 2950
+Text Label 4300 2950 2    50   ~ 0
+-20VDC
+$Comp
+L Connector:Screw_Terminal_01x03 J11
+U 1 1 60B5345F
+P 8450 2600
+F 0 "J11" V 8450 2300 50  0000 L CNN
+F 1 "Power in" V 8450 2800 50  0000 L CNN
+F 2 "" H 8450 2600 50  0001 C CNN
+F 3 "~" H 8450 2600 50  0001 C CNN
+	1    8450 2600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J13
+U 1 1 60B53465
+P 9050 2100
+F 0 "J13" H 9000 2200 50  0000 L CNN
+F 1 "Speaker" H 8900 1900 50  0000 L CNN
+F 2 "" H 9050 2100 50  0001 C CNN
+F 3 "~" H 9050 2100 50  0001 C CNN
+	1    9050 2100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J10
+U 1 1 60B5346B
+P 7850 2000
+F 0 "J10" H 7850 1800 50  0000 C CNN
+F 1 "Audio in" H 7800 2100 50  0000 C CNN
+F 2 "" H 7850 2000 50  0001 C CNN
+F 3 "~" H 7850 2000 50  0001 C CNN
+	1    7850 2000
+	1    0    0    -1  
+$EndComp
+Text Notes 8000 2000 2    50   ~ 0
++
+Text Notes 8000 2150 2    50   ~ 0
+-
+Text Notes 9000 2000 2    50   ~ 0
++
+Text Notes 9000 2150 2    50   ~ 0
+-
+Text Notes 8550 2550 2    50   ~ 0
+GND
+Text Notes 8350 2550 2    50   ~ 0
++
+Text Notes 8650 2550 2    50   ~ 0
+-
+Wire Notes Line
+	9350 1700 9350 2850
+Wire Notes Line
+	7550 2850 9350 2850
+Wire Notes Line
+	7550 2850 7550 1700
+Wire Notes Line
+	7550 1700 9350 1700
+Text Notes 7650 2800 0    50   ~ 0
+TDA7293
+$Comp
+L Connector:Conn_01x02_Female J9
+U 1 1 60B5347D
+P 6400 1900
+F 0 "J9" H 6500 1850 50  0000 C CNN
+F 1 "6.3mm TS Jack" H 6550 2000 50  0000 C CNN
+F 2 "" H 6400 1900 50  0001 C CNN
+F 3 "~" H 6400 1900 50  0001 C CNN
+	1    6400 1900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6600 1800 7100 1800
+$Comp
+L Device:R_POT RV2
+U 1 1 60B53484
+P 7100 2000
+F 0 "RV2" H 7031 2046 50  0000 R CNN
+F 1 "47k LOG" H 7031 1955 50  0000 R CNN
+F 2 "" H 7100 2000 50  0001 C CNN
+F 3 "~" H 7100 2000 50  0001 C CNN
+	1    7100 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 2200 7100 2150
+Connection ~ 7100 2200
+Wire Wire Line
+	6600 1900 6600 2200
+Wire Wire Line
+	7100 1800 7100 1850
+Wire Wire Line
+	7250 2000 7650 2000
+Wire Wire Line
+	7650 2100 7350 2100
+Wire Wire Line
+	7350 2100 7350 2200
+Wire Wire Line
+	6600 2200 7100 2200
+Wire Wire Line
+	7350 2200 7100 2200
+$Comp
+L Connector:Conn_01x02_Female J14
+U 1 1 60B53495
+P 9700 2000
+F 0 "J14" H 9800 1950 50  0000 C CNN
+F 1 "2x 4mm Banana" H 9800 1800 50  0000 C CNN
+F 2 "" H 9700 2000 50  0001 C CNN
+F 3 "~" H 9700 2000 50  0001 C CNN
+	1    9700 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 2800 8550 3000
+Wire Wire Line
+	8450 2800 8450 3000
+$Comp
+L power:GND #PWR04
+U 1 1 60B5349D
+P 8450 3000
+F 0 "#PWR04" H 8450 2750 50  0001 C CNN
+F 1 "GND" H 8455 2827 50  0000 C CNN
+F 2 "" H 8450 3000 50  0001 C CNN
+F 3 "" H 8450 3000 50  0001 C CNN
+	1    8450 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8350 2800 8350 3000
+Wire Wire Line
+	8350 3000 8000 3000
+Text Label 8000 3000 0    50   ~ 0
++20VDC
+Wire Wire Line
+	8550 3000 8900 3000
+Text Label 8900 3000 2    50   ~ 0
+-20VDC
+Text Notes 3600 2300 0    50   ~ 0
+* Remove /\nshorten rectifier
+Text Notes 8200 2350 0    50   ~ 0
+* Remove /\nshorten rectifier
+$Comp
+L Connector:TestPoint TP1
+U 1 1 60B592D1
+P 3550 4600
+F 0 "TP1" V 3504 4788 50  0000 L CNN
+F 1 "Chassis" V 3595 4788 50  0000 L CNN
+F 2 "" H 3750 4600 50  0001 C CNN
+F 3 "~" H 3750 4600 50  0001 C CNN
+	1    3550 4600
+	0    1    1    0   
+$EndComp
+Connection ~ 3550 4600
+Wire Wire Line
+	3550 4600 3550 5350
+Connection ~ 4800 5350
+Wire Wire Line
+	4800 5350 5000 5350
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 60AAE0CE
+P 5000 5350
+F 0 "#FLG0101" H 5000 5425 50  0001 C CNN
+F 1 "PWR_FLAG" H 5000 5523 50  0000 C CNN
+F 2 "" H 5000 5350 50  0001 C CNN
+F 3 "~" H 5000 5350 50  0001 C CNN
+	1    5000 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 60B60B3E
+P 8200 4250
+F 0 "R4" V 7993 4250 50  0000 C CNN
+F 1 "2k2" V 8084 4250 50  0000 C CNN
+F 2 "" V 8130 4250 50  0001 C CNN
+F 3 "~" H 8200 4250 50  0001 C CNN
+	1    8200 4250
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D4
+U 1 1 60B61249
+P 8050 4450
+F 0 "D4" H 8043 4666 50  0000 C CNN
+F 1 "Power LED" H 7950 4550 50  0000 C CNN
+F 2 "" H 8050 4450 50  0001 C CNN
+F 3 "~" H 8050 4450 50  0001 C CNN
+	1    8050 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8200 4400 8200 4450
+Wire Wire Line
+	7900 4450 7800 4450
+Wire Wire Line
+	7500 4500 7500 4600
+Connection ~ 7500 4600
+Wire Wire Line
+	7500 4700 7500 4600
+Wire Wire Line
+	7800 4450 7800 4600
+Wire Notes Line
+	2950 1650 4750 1650
+Wire Notes Line
+	3550 1650 3550 1750
+Wire Notes Line
+	3550 1750 4200 1750
+Wire Notes Line
+	4200 1750 4200 1650
+Wire Notes Line
+	8150 1700 8150 1800
+Wire Notes Line
+	8150 1800 8800 1800
+Wire Notes Line
+	8800 1800 8800 1700
+Text Notes 3350 1600 0    50   ~ 0
+Mount IC isolated to metal\nchassis with sufficient cooling
+Text Notes 7950 1650 0    50   ~ 0
+Mount IC isolated to metal\nchassis with sufficient cooling
+Text Notes 1350 1650 0    50   ~ 0
+Unbalanced line in
+Text Notes 5950 1700 0    50   ~ 0
+Unbalanced line in
+Wire Wire Line
+	9250 2000 9500 2000
+Wire Wire Line
+	9250 2100 9500 2100
+Wire Wire Line
+	4650 2050 4900 2050
+Wire Wire Line
+	4650 1950 4900 1950
+Text Label 5850 3800 0    50   ~ 0
+15VAC_1
+Text Label 5850 4400 0    50   ~ 0
+15VAC_2
+Text Notes 2300 4150 0    50   ~ 0
+Main in\n230V 50Hz
+$Comp
+L Device:Fuse F1
+U 1 1 60AC4209
+P 3300 4300
+F 0 "F1" V 3200 4300 50  0000 C CNN
+F 1 "230V 1A" V 3400 4300 50  0000 C CNN
+F 2 "" V 3230 4300 50  0001 C CNN
+F 3 "~" H 3300 4300 50  0001 C CNN
+	1    3300 4300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3150 4300 2950 4300
+Wire Wire Line
+	7500 4600 7800 4600
+Wire Wire Line
+	8050 4100 8200 4100
+Connection ~ 7800 4600
+Connection ~ 8200 4100
+Wire Wire Line
+	7800 4600 8600 4600
+Wire Wire Line
+	8200 4100 8600 4100
+$EndSCHEMATC
